@@ -1,6 +1,7 @@
 import fs from "node:fs"
 import path from "node:path"
 import { Client, Collection, GatewayIntentBits } from "discord.js";
+import TSClient from "./TSClient";
 const { token, clientId } = require('./config.json');
 
 if (clientId == "youridhere" || token == "yourtokenhere") {
@@ -8,7 +9,7 @@ if (clientId == "youridhere" || token == "yourtokenhere") {
 	process.exit()
 }
 //NOTE: edit intents to do certain actions -- Cwab
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new TSClient({ intents: [GatewayIntentBits.Guilds] });
 
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
