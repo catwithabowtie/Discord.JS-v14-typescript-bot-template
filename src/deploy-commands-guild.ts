@@ -1,7 +1,7 @@
-const { REST, Routes } = require('discord.js');
-const { clientId, guildId, token } = require('./config.json');
-const fs = require('node:fs');
-const path = require('node:path');
+import { REST, Routes } from 'discord.js';
+const { clientId, guildId, token } = require('../config.json');
+import fs from 'node:fs';
+import path from 'node:path';
 if (clientId == "youridhere" || token == "yourtokenhere" || guildId == "yourguildidhere") {
 	console.log("WARNING: Override your userid or token or guildid at config.json for your bot work properly.")
 	process.exit()
@@ -14,7 +14,7 @@ const commandFolders = fs.readdirSync(foldersPath);
 for (const folder of commandFolders) {
 	// Grab all the command files from the commands directory you created earlier
 	const commandsPath = path.join(foldersPath, folder);
-	const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
+	const commandFiles = fs.readdirSync(commandsPath).filter((file: string) => file.endsWith(".js"));
 	// Grab the SlashCommandBuilder#toJSON() output of each command's data for deployment
 	for (const file of commandFiles) {
 		const filePath = path.join(commandsPath, file);
@@ -40,8 +40,8 @@ const rest = new REST().setToken(token);
 			Routes.applicationCommands(clientId),
 			{ body: commands },
 		);
-
-		console.log(`Successfully reloaded ${data.length} application (/) commands.`);
+		// very bad code fix this later
+		console.log(`Successfully reloaded ${(data as Array<unknown>).length} guild (/) commands.`);
 	} catch (error) {
 		// And of course, make sure you catch and log any errors!
 		console.error(error);

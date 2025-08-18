@@ -2,16 +2,22 @@
   "name": "tbot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/src/index.js",
+  "module": "dist/src/index.mjs",
+  "types": "dist/src/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc && copy config.json dist\\config.json",
+    "register-guild": "cd dist && cd src && node deploy-commands-guild.js",
+    "register-global": "cd dist && cd src &&node deploy-commands-global.js",
+    "dev": "cls && node ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "discord.js": "^14.21.0"
+    "discord.js": "^14.21.0",
+    "typescript": "^5.9.2"
   },
   "devDependencies": {
     "@types/node": "^24.3.0"

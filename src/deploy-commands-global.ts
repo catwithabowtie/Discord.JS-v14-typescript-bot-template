@@ -1,5 +1,5 @@
 import { REST, Routes } from "discord.js";
-const { clientId, token } = require('./config.json');
+const { clientId, token } = require('../config.json');
 import fs from "node:fs";
 import path from "node:path";
 if (clientId == "youridhere" || token == "yourtokenhere") {
@@ -14,7 +14,7 @@ const commandFolders = fs.readdirSync(foldersPath);
 for (const folder of commandFolders) {
 	// Grab all the command files from the commands directory you created earlier
 	const commandsPath = path.join(foldersPath, folder);
-	const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
+	const commandFiles = fs.readdirSync(commandsPath).filter((file: string) => file.endsWith(".js"));
 	// Grab the SlashCommandBuilder#toJSON() output of each command's data for deployment
 	for (const file of commandFiles) {
 		const filePath = path.join(commandsPath, file);
@@ -41,7 +41,7 @@ const rest = new REST().setToken(token);
 			{ body: commands },
 		);
 
-		console.log(`Successfully reloaded ${(Array.isArray(data) ? data.length : 0)} application (/) commands.`);
+		console.log(`Successfully reloaded ${(data as Array<unknown>).length} global (/) commands.`);
 	} catch (error) {
 		// And of course, make sure you catch and log any errors!
 		console.error(error);

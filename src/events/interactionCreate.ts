@@ -1,11 +1,11 @@
-import { Events, MessageFlags } from 'discord.js';
+import { ChatInputCommandInteraction, Events, MessageFlags } from 'discord.js';
 
 module.exports = {
 	name: Events.InteractionCreate,
-	async execute(interaction) {
+	async execute(interaction: ChatInputCommandInteraction) {
 		if (!interaction.isChatInputCommand()) return;
-
-		const command = interaction.client.commands.get(interaction.commandName);
+		// UPDATE ME: im not sure if this is the right solution, typecasting client -> any is very weird.
+		const command = (interaction.client as any).commands.get(interaction.commandName);
 
 		if (!command) {
 			console.error(`No command matching ${interaction.commandName} was found.`);
