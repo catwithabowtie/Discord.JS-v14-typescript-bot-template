@@ -7,8 +7,8 @@
   "types": "dist/src/index.d.ts",
   "scripts": {
     "build": "tsc && copy config.json dist\\config.json",
-    "register-guild": "cd dist && cd src && node deploy-commands-guild.js",
-    "register-global": "cd dist && cd src &&node deploy-commands-global.js",
+    "deploy-guild": "cd dist && cd src && node deploy-commands-guild.js",
+    "deploy-global": "cd dist && cd src &&node deploy-commands-global.js",
     "dev": "cls && node ."
   },
   "keywords": [],
