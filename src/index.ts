@@ -1,7 +1,7 @@
 import fs from "node:fs"
 import path from "node:path"
 import { Collection, GatewayIntentBits } from "discord.js";
-import TSClient from "../TSClient";
+import TSClient from "./TSClient";
 const { token, clientId } = require('../config.json');
 
 if (clientId == "youridhere" || token == "yourtokenhere") {

@@ -1,16 +1,25 @@
 {
   "compilerOptions": {
-    "strict": true,
-    "noImplicitAny": true,
-    "esModuleInterop": true,
-    "strictNullChecks": true,
     "target": "ES2022",
-    "moduleResolution": "Node10",
     "module": "CommonJS",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "sourceMap": true,
     "declaration": true,
-    "isolatedModules": true,
-    "outDir": "dist"
+    "noImplicitAny": false
   },
-  "include": ["src", "src/commandssrc/eventsents","config.json"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
