@@ -11,6 +11,7 @@
 2. Install dependencies: `npm install`
 3. Change token,clientid and guildid in config.json
 4. Register commands:\
-4.1 For global commands use `node deploy-commands-global.js`\
-4.2 For guild commands use `node deploy-commands-guild.js`
-5. Run project `node .`
+4.1 cd into the source folder `cd src` \
+4.2 For global commands use `node deploy-commands-global.js`\
+4.3 For guild commands use `node deploy-commands-guild.js`
+6. Run project `node .`
