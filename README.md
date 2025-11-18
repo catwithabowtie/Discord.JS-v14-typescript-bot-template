@@ -13,5 +13,5 @@
 3. Change token,clientid and guildid in config.json
 4. Register commands:\
 4.1 For global commands use `node deploy-commands-global.js`\
-4.2 For guild commands use `node deploy-commands.-guild.js`
+4.2 For guild commands use `node deploy-commands-guild.js`
 5. Run project `node .`
