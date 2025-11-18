@@ -4,7 +4,6 @@
 
 1. NodeJS latest LTS version
 2. NPM
-3. Little experience with programming in general
 
 ## How to use
 
