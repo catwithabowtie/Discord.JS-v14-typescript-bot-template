@@ -8,7 +8,6 @@ if (clientId == "youridhere" || token == "yourtokenhere") {
 	console.log("WARNING: Override your userid or token at config.json for your bot work properly.")
 	process.exit()
 }
-//NOTE: edit intents to do certain actions -- Cwab
 const client = new TSClient({ intents: [GatewayIntentBits.Guilds] });
 
 client.commands = new Collection();

@@ -2,13 +2,13 @@
   "name": "tbot",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/src/index.js",
-  "module": "dist/src/index.mjs",
-  "types": "dist/src/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc && copy config.json dist\\config.json",
-    "deploy-guild": "cd dist && cd src && node deploy-commands-guild.js",
-    "deploy-global": "cd dist && cd src &&node deploy-commands-global.js",
+    "deploy-guild": "cd dist && node deploy-commands-guild.js",
+    "deploy-global": "cd dist && node deploy-commands-global.js",
     "dev": "cls && node ."
   },
   "keywords": [],
